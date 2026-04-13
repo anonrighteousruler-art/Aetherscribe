@@ -1,0 +1,7 @@
+{
+  "name": "AetherScribe",
+  "description": "An integrated PWA for structured storybook generation and multi-modal dream journaling with Jungian analysis.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  @keyframes fiber-optic {
+    0% { transform: translateX(-100%) skewX(-45deg); }
+    100% { transform: translateX(200%) skewX(-45deg); }
+  }
+
+  @keyframes nebula-pulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.1); }
+  }
+}
+
+.animate-fiber-optic {
+  animation: fiber-optic 3s linear infinite;
+}
+
+.animate-nebula {
+  animation: nebula-pulse 10s ease-in-out infinite;
+}
+
+:root {
+  background-color: #0a051a;
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fiber-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.fiber-border::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: fiber-optic 4s infinite;
+}
